@@ -10,6 +10,7 @@
 #include "ChimeraAPI.h"
 
 #include "Chimera.h"
+#include "parrot/api.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 /// @fn Chimera::StaticInitialize()
