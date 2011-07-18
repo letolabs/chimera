@@ -34,6 +34,12 @@ SET( SOURCES
     ${GENERATED}
     )
 
+# requires parrot_config to be in your PATH
+
+# cmake doesn't like backticks
+# SET(PLUGIN_INTERNAL_DEPS ${PLUGIN_INTERNAL_DEPS} `parrot_config inst_libparrot_linkflags` )
+SET(PLUGIN_INTERNAL_DEPS ${PLUGIN_INTERNAL_DEPS} -L/home/leto/git/parrot/installed_parrot/lib -lparrot )
+
 # This will include Win/projectDef.cmake, X11/projectDef.cmake, Mac/projectDef 
 # depending on the platform
 include_platform()
