@@ -11,6 +11,7 @@
 
 #include "Chimera.h"
 #include "parrot/api.h"
+#include "stdio.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 /// @fn Chimera::StaticInitialize()
@@ -23,6 +24,13 @@ void Chimera::StaticInitialize()
 {
     // Place one-time initialization stuff here; As of FireBreath 1.4 this should only
     // be called once per process
+    Parrot_PMC interp = NULL;
+
+    if (!Parrot_api_make_interpreter(NULL, NULL, 0, &interp)) {
+        fprintf(stderr, "Cannot create Parrot interpreter!\n");
+    } else {
+        printf("Parrot interp created!\n");
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
